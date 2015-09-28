@@ -1,13 +1,15 @@
 package service;
 
-import com.google.common.base.Preconditions;
-import domain.Medical;
+import java.util.HashMap;
+import java.util.Map;
+
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
-import java.util.HashMap;
-import java.util.Map;
+import com.google.common.base.Preconditions;
+
+import domain.Medical;
 
 public class LinksParserServiceImpl implements LinksParserService {
 
@@ -20,17 +22,28 @@ public class LinksParserServiceImpl implements LinksParserService {
     public Map<Medical, String> parse() {
         Preconditions.checkNotNull(htmlDocument, "HTML document is not specified!");
         Map<Medical, String> links = new HashMap<>();
-        Elements rows = htmlDocument.select("#main > div > div > table > tbody > tr > td[width=19%] ");
+        Elements rows = htmlDocument.select("#main > div > div > table > tbody > tr ");
         for (Element row : rows) {
-            Element subRow = row.select("p > span > a").last();
+            Element linkElem = getElementFromRow(row, "19");
+            Element nameElem = getElementFromRow(row, "48");
+            Element cityElem = getElementFromRow(row, "31");
 
-            if (subRow == null) {
+            if (linkElem == null || nameElem == null || cityElem == null) {
                 continue;
             }
+
             Medical medical = new Medical();
-            medical.setName(subRow.attr("href"));
-            links.put(medical, subRow.attr("href"));
+            medical.setCity(cityElem.text());
+            medical.setName(nameElem.text());
+
+            links.put(medical, linkElem.attr("href"));
         }
         return links;
+    }
+
+    private Element getElementFromRow(Element row, String attrPatrametr) {
+        Element element = row.select("td[width=" + attrPatrametr + "%] > p > span").last();
+
+        return element;
     }
 }
