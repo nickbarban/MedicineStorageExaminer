@@ -1,7 +1,7 @@
 package client;
 
 import org.jsoup.nodes.Document;
-import service.LinksParserServiceImpl;
+import service.SiteParserServiceBean;
 import service.SiteDownloader;
 
 import java.io.IOException;
@@ -16,7 +16,7 @@ public class PdfDownloaderTestClient {
             throw new RuntimeException("Cann't get document!");
 
         }
-        LinksParserServiceImpl parser = new LinksParserServiceImpl(document);
+        SiteParserServiceBean parser = new SiteParserServiceBean(document);
         parser.parse();
     }
 

@@ -11,11 +11,11 @@ import com.google.common.base.Preconditions;
 
 import domain.Medical;
 
-public class LinksParserServiceImpl implements LinksParserService {
+public class SiteParserServiceBean implements SiteParserService {
 
     private Document htmlDocument;
 
-    public LinksParserServiceImpl(Document htmlDocument) {
+    public SiteParserServiceBean(Document htmlDocument) {
         this.htmlDocument = htmlDocument;
     }
 
