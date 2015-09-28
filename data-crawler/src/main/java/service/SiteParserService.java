@@ -4,6 +4,6 @@ import domain.Medical;
 
 import java.util.Map;
 
-public interface LinksParserService {
+public interface SiteParserService {
     public Map<Medical, String> parse();
 }
