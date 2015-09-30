@@ -11,6 +11,13 @@
 
     <artifactId>data-crawler</artifactId>
 
+    <properties>
+        <jsoup-version>1.8.2</jsoup-version>
+        <tika-version>1.10</tika-version>
+        <pdfbox-version>1.8.10</pdfbox-version>
+        <gson>2.3</gson>
+    </properties>
+
     <dependencies>
         <dependency>
             <groupId>org.jsoup</groupId>
@@ -31,6 +38,11 @@
             <groupId>org.apache.pdfbox</groupId>
             <artifactId>pdfbox</artifactId>
             <version>${pdfbox-version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.google.code.gson</groupId>
+            <artifactId>gson</artifactId>
+            <version>${gson}</version>
         </dependency>
     </dependencies>
 </project>
