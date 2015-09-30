@@ -1,6 +1,7 @@
 package service;
 
 import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.Map;
 
 import org.jsoup.nodes.Document;
@@ -22,7 +23,7 @@ public class SiteParserServiceBean implements SiteParserService {
 
     public Map<Medical, String> parse() {
         Preconditions.checkNotNull(htmlDocument, "HTML document is not specified!");
-        Map<Medical, String> links = new HashMap<>();
+        Map<Medical, String> links = new LinkedHashMap<>();
         Elements rows = htmlDocument.select("#main > div > div > table > tbody > tr ");
         for (Element row : rows) {
             Element linkElem = getElementFromRow(row, "19");

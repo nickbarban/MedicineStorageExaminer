@@ -67,4 +67,11 @@ public class Medical {
         return true;
     }
 
+	@Override
+	public String toString() {
+		return city + ", " + name;
+	}
+    
+    
+
 }
