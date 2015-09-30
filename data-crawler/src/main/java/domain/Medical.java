@@ -1,6 +1,11 @@
 package domain;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Medical {
+	
+	private List<Leftover> leftovers = new ArrayList<>();
 
     private String city;
     private String name;
@@ -20,8 +25,18 @@ public class Medical {
     public void setName(String name) {
         this.name = name;
     }
+    
+    
 
-    @Override
+    public List<Leftover> getLeftovers() {
+		return leftovers;
+	}
+
+	public void setLeftovers(List<Leftover> leftovers) {
+		this.leftovers = leftovers;
+	}
+
+	@Override
     public int hashCode() {
         final int prime = 31;
         int result = 1;

@@ -10,10 +10,9 @@ import java.util.regex.Pattern;
 
 public final class DataAnalyzer {
 	
-	private final String[] tableHeadRegex = {"№(\\s*)Назва(.*)Одиниц[яі](.*)Кільк(.*)", 
-													"№(\\s*)Назва лікарського засобу(\\s*)Одиниц[яі](\\s*)" };
-	private final String[] measures = {"амп", "ампули", "кан", "кг", "кон", "канистра", "пар", "пари", "таб", 
-										"уп", "упаковка", "фл", "флакони", "шт"};
+	private final String[] tableHeadRegex = {"(\\s*) (.*) [ ](.*) (.*)", 
+									"(\\s*) (.*) [ ](.*) (.*)" };
+	private final String[] measures = {"Р°РјРї", "С€С‚", "С„Р»", "С‚Р°Р±Р»", "СѓРї", "РєРі", "РїР°СЂРё"};
 	
 	private List<String> analyzedData = new ArrayList<>();
 	private List<String> unAnalyzedData = new ArrayList<>();
