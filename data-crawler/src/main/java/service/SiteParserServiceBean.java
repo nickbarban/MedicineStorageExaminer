@@ -8,6 +8,7 @@ import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
 import com.google.common.base.Preconditions;
+import com.google.common.base.Strings;
 
 import domain.Medical;
 
@@ -32,11 +33,17 @@ public class SiteParserServiceBean implements SiteParserService {
                 continue;
             }
 
+            String link = linkElem.select("a").attr("href");
+
+            if (Strings.isNullOrEmpty(link)) {
+                continue;
+            }
+
             Medical medical = new Medical();
             medical.setCity(cityElem.text());
             medical.setName(nameElem.text());
 
-            links.put(medical, linkElem.attr("href"));
+            links.put(medical, link);
         }
         return links;
     }
