@@ -1,10 +1,13 @@
 package client;
 
-import org.jsoup.nodes.Document;
-import service.SiteParserServiceBean;
-import service.SiteDownloader;
-
 import java.io.IOException;
+import java.util.Map.Entry;
+
+import org.jsoup.nodes.Document;
+
+import domain.Medical;
+import service.SiteDownloader;
+import service.SiteParserServiceBean;
 
 public class PdfDownloaderTestClient {
 
@@ -17,7 +20,11 @@ public class PdfDownloaderTestClient {
 
         }
         SiteParserServiceBean parser = new SiteParserServiceBean(document);
-        parser.parse();
+        ;
+
+        for (Entry<Medical, String> link : parser.parse().entrySet()) {
+            System.out.println(link);
+        }
     }
 
 }
