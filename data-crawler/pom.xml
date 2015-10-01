@@ -16,6 +16,7 @@
 		<tika-version>1.10</tika-version>
 		<pdfbox-version>1.8.10</pdfbox-version>
 		<gson>2.3</gson>
+		<mongo-java-driver>3.0.3</mongo-java-driver>
 	</properties>
 
 	<dependencies>
@@ -47,7 +48,7 @@
 		<dependency>
 			<groupId>org.mongodb</groupId>
 			<artifactId>mongo-java-driver</artifactId>
-			<version>3.0.3</version>
+			<version>${mongo-java-driver}</version>
 		</dependency>
 
 	</dependencies>
