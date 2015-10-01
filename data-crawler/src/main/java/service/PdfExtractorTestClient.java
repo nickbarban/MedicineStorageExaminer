@@ -13,7 +13,6 @@ import java.util.Map;
 import org.jsoup.nodes.Document;
 
 import domain.Leftover;
-import domain.LeftoverJsonService;
 import domain.Medical;
 
 public class PdfExtractorTestClient {	
@@ -100,6 +99,7 @@ public class PdfExtractorTestClient {
 			System.out.println(++i + ": " + medical);
 		}
     	System.out.println(medicals.get(0) + ": " + new LeftoverJsonService(medicals.get(0)));
+    	System.out.println(medicals.get(0).getLeftovers().get(0) + ": " + new LeftoverJsonService(medicals.get(0).getLeftovers().get(0)));
     	
     	
 		

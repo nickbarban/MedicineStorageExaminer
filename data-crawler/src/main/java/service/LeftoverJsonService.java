@@ -1,6 +1,9 @@
-package domain;
+package service;
 
 import com.google.gson.Gson;
+
+import domain.Leftover;
+import domain.Medical;
 
 public final class LeftoverJsonService {
 	
