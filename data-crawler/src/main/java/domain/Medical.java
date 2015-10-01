@@ -3,19 +3,28 @@ package domain;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Class reflects one clinic on specific location and all aids in it.
+ */
 public class Medical {
-	
-	private List<Leftover> leftovers = new ArrayList<>();
 
-    private String city;
+    private String location;
     private String name;
+    private List<Leftover> leftovers;
+    private List<String> unrecodnisedEntries;
 
-    public String getCity() {
-        return city;
+    public Medical(String location, String name) {
+        this.location = location;
+        this.name = name;
+        this.leftovers = new ArrayList<>();
     }
 
-    public void setCity(String city) {
-        this.city = city;
+    public String getLocation() {
+        return location;
+    }
+
+    public void setLocation(String location) {
+        this.location = location;
     }
 
     public String getName() {
@@ -25,22 +34,28 @@ public class Medical {
     public void setName(String name) {
         this.name = name;
     }
-    
-    
 
     public List<Leftover> getLeftovers() {
-		return leftovers;
-	}
+        return leftovers;
+    }
 
-	public void setLeftovers(List<Leftover> leftovers) {
-		this.leftovers = leftovers;
-	}
+    public void setLeftovers(List<Leftover> leftovers) {
+        this.leftovers = leftovers;
+    }
 
-	@Override
+    public List<String> getUnrecodnisedEntries() {
+        return unrecodnisedEntries;
+    }
+
+    public void setUnrecodnisedEntries(List<String> unrecodnisedEntries) {
+        this.unrecodnisedEntries = unrecodnisedEntries;
+    }
+
+    @Override
     public int hashCode() {
         final int prime = 31;
         int result = 1;
-        result = prime * result + ((city == null) ? 0 : city.hashCode());
+        result = prime * result + ((location == null) ? 0 : location.hashCode());
         result = prime * result + ((name == null) ? 0 : name.hashCode());
         return result;
     }
@@ -54,10 +69,10 @@ public class Medical {
         if (getClass() != obj.getClass())
             return false;
         Medical other = (Medical) obj;
-        if (city == null) {
-            if (other.city != null)
+        if (location == null) {
+            if (other.location != null)
                 return false;
-        } else if (!city.equals(other.city))
+        } else if (!location.equals(other.location))
             return false;
         if (name == null) {
             if (other.name != null)
@@ -66,12 +81,5 @@ public class Medical {
             return false;
         return true;
     }
-
-	@Override
-	public String toString() {
-		return city + ", " + name;
-	}
-    
-    
 
 }

@@ -13,10 +13,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <java-version>1.7</java-version>
         <guava-version>12.0</guava-version>
-        <jsoup-version>1.8.2</jsoup-version>
         <junit-version>4.12</junit-version>
-        <tika-version>1.10</tika-version>
-        <pdfbox-version>1.8.10</pdfbox-version>
     </properties>
 
     <modules>

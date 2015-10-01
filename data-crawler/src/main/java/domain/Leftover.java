@@ -1,5 +1,8 @@
 package domain;
 
+/**
+ * Class represent one recognised aid entry in the clinic.
+ */
 public class Leftover {
 
 	private int localId;
@@ -35,7 +38,4 @@ public class Leftover {
 		return "Leftover [" + localId + " " + name + " " + measure + " " + quantity
 				+ "]";
 	}
-	
-	
-	
 }
